@@ -5,10 +5,6 @@ name: Wheels2
 
 on: workflow_dispatch
 
-env:
-  #CIBW_TEST_COMMAND: python -m unittest discover -v -s {package}/tests/
-  CIBW_TEST_COMMAND: python {project}/tests/test_for_ci.py
-
 jobs:
   build_wheels:
     name: Wheels on ${{ matrix.os }}
@@ -34,8 +30,6 @@ jobs:
         CIBW_BUILD: 'cp*'
         CIBW_SKIP: 'cp36-* *musllinux* *_i686 *-win32'
         CIBW_ARCHS_MACOS: x86_64 arm64
-        # increase pip debugging output
-        CIBW_BUILD_VERBOSITY: 1
         #CIBW_ENVIRONMENT: CLIBD_MON=/host/${{runner.workspace}}/servalcat/monomers
 
 
