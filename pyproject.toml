@@ -1,6 +1,6 @@
 [build-system]
 requires = ["scikit-build-core==0.7.0", "pybind11>=2.6.2",
-            "gemmi @ git+https://github.com/project-gemmi/gemmi.git@84b580340165da1e9f07b3fb07b75cde390da79b",
+            "gemmi @ git+https://github.com/project-gemmi/gemmi.git@09e56c26305da79dd36580f4e4da579e1ae4559b",
 ]
 build-backend = "scikit_build_core.build"
 
@@ -9,8 +9,8 @@ build-backend = "scikit_build_core.build"
 name = "servalcat"
 dynamic = ["version"]
 requires-python = ">=3.7"
-dependencies = ['numpy>=1.15', 'scipy', 'pandas>=1.1.0', 'gemmi>=0.6.4']
-                #'gemmi @ git+https://github.com/project-gemmi/gemmi.git@84b580340165da1e9f07b3fb07b75cde390da79b']
+dependencies = ['numpy>=1.15', 'scipy', 'pandas>=1.1.0', 'gemmi==0.6.4']
+                #'gemmi @ git+https://github.com/project-gemmi/gemmi.git@09e56c26305da79dd36580f4e4da579e1ae4559b']
 description="Structure refinement and validation for crystallography and single particle analysis"
 readme = "README.md"
 authors = [
