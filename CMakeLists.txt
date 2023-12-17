@@ -65,7 +65,9 @@ if (DEFINED SKBUILD)
   message(STATUS "found gemmi configs: ${FOUND_FILES}")
   set(CMAKE_FIND_DEBUG_MODE TRUE)
   find_package(gemmi 0.6.4 CONFIG REQUIRED
-               PATHS ${Python_SITEARCH}/../..)
+               # On Windows, when both gemmi and pybind11 are installed from
+               # wheels and gemmi can't be found, pybind11 location can helps:
+               PATHS ${pybind11_INCLUDE_DIRS}/../../../..)
   set(CMAKE_FIND_DEBUG_MODE FALSE)
 else()
   set(USE_PYTHON ON CACHE BOOL "" FORCE)
