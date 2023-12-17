@@ -39,4 +39,4 @@ input = "servalcat/__init__.py"
 build-verbosity = 2
 test-command = "python {project}/tests/test_for_ci.py"
 [tool.cibuildwheel.environment]
-SKBUILD_CMAKE_ARGS = '-DBUILD_SHARED_LIBS=OFF;-DINSTALL_DEV_FILES=ON'
+SKBUILD_CMAKE_ARGS = '-DBUILD_SHARED_LIBS=OFF;-DINSTALL_DEV_FILES=ON;-DBUILD_GEMMI_PROGRAM=OFF'

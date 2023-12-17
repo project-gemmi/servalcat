@@ -53,10 +53,14 @@ else()
 endif()
 
 if (DEFINED SKBUILD)
+  message(STATUS "PYTHON is ${Python_EXECUTABLE}")
   message(STATUS "CMAKE_INSTALL_PREFIX is ${CMAKE_INSTALL_PREFIX}")
   message(STATUS "CMAKE_SYSTEM_PREFIX_PATH is ${CMAKE_SYSTEM_PREFIX_PATH}")
+  execute_process(COMMAND ${Python_EXECUTABLE} -m pip show -f gemmi
+                  COMMAND_ECHO STDOUT)
+  message(STATUS "-- end --")
   file(GLOB_RECURSE FOUND_FILES LIST_DIRECTORIES true
-       c:/*/gemmi-config.cmake)
+       c:/Users/runneradmin/AppData/Local/*/gemmi-config.cmake)
   message(STATUS "found gemmi configs: ${FOUND_FILES}")
   set(CMAKE_FIND_DEBUG_MODE TRUE)
   find_package(gemmi 0.6.4 CONFIG REQUIRED)
